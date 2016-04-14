@@ -6,7 +6,7 @@ Python email package to send emails based off of jinja templates
 ---
 Install using pip:
 
-    $ pip install -e git+git://github.com/cmeadows/emailer.git
+    $ pip install git+git://github.com/cmeadows/emailer.git
 
 Install using setuptools:
 
@@ -36,7 +36,7 @@ from emailer import TemplateManager
 
 manager = TemplateManager(YOUR_TEMPLATE_DIR)
 # Replace var1, var2, etc for your template variables
-email_html = manager.render_template(TEMPLATE_FILENAME, file_name=var1="var1", var2="var2")
+email_html = manager.render_template(TEMPLATE_FILENAME, var1="var1", var2="var2")
 
 m = Message(from_email=YOUR_FROM_EMAIL, to_email=YOUR_TO_EMAIL, subject=YOUR_SUBJECT, html=email_html)
 
