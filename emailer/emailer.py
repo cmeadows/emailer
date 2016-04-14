@@ -17,6 +17,8 @@ class Emailer():
             self.server = server
         elif server is not None:
             raise TypeError("expected type smtplib.SMTP for server, received {0}".format(type(server)))
+        else:
+            self.server = None
 
     def __del__(self):
         '''
