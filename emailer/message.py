@@ -68,9 +68,10 @@ class Message():
         else:
             message['To'] = self.to_email
 
-        for attachment in attachments:
+        for attachment in self.attachments:
+
             part = MIMEBase('application', "octet-stream")
-            part.set_payload(attachment.get('file'))
+            part.set_payload(attachment.get('file').getvalue())
             encoders.encode_base64(part)
             part.add_header('Content-Disposition', 'attachment; filename="{0}"'.format(attachment.get('filename')))
             message.attach(part)
